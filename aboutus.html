@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quick Reserve</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+}
+
+header.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+    .logo {
+      font-weight: bold;
+      color: orange;
+      font-size: 1.5em;
+    }
+    .logo img {
+      width: 150px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: orange;
+    }
+
+    .sign-in-btn {
+      background: orange;
+      color: white;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('Assets/aboutus.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 0 60px;
+    }
+    .hero-text img {
+  width: 100%;
+  height: 55vh;
+  display: block;
+  margin: 0 auto;
+}
+
+    .hero-text {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .hero-text h1 {
+
+      font-size: 5em;
+      margin-bottom: 2rem;
+    }
+
+    .highlight-yellow,
+    .highlight-blue {
+      color: white;
+    }
+
+    .hero-text p {
+      line-height: 1.6;
+    }
+
+    .team {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 20px;
+        background: #f8f8f8;
+    }
+
+    .team h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .team-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .team-card {
+        background-color: white;
+        border: 3px solid gray;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        width: 250px;
+    }
+
+    .story {
+  display: block;
+  padding: 70px 20px 3rem 20px; /* Added top padding for spacing */
+  background-image: url('Assets/ourstory.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  text-align: left;
+}
+
+
+.story h1{
+    font-size: 3em;
+        margin-bottom: 50px;
+        text-align: center;
+    
+}
+.story p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
+
+    .book-btn {
+      background: #ef4444;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .card {
+      background-color: white;
+      border: 3px solid gray;
+      padding: 50px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .card img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .team-card img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+
+    .card h3 {
+      font-size: 1.2em;
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: auto;
+      padding-bottom: 20px;
+      text-align: left;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-brand .logo {
+      font-weight: bold;
+      color: orange;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links div {
+      min-width: 150px;
+    }
+
+    .footer-links p {
+      margin: 6px 0;
+    }
+
+    .socials a {
+      margin-right: 10px;
+    }
+
+    .socials img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 0.85em;
+      color: #bbb;
+    }
+
+    @media (max-width: 600px) {
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-links div {
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h1 class="highlight-yellow">About Us</h1>
+        <img src="Assets/sticker.png" alt="" srcset="">
+    </div>
+</section>
+  
+<section class="story">
+    <h1>Our Story</h1>
+    <p>We make it easy for pet owners to book appointments for their pets. Whether it's a vet visit, grooming, or other pet services, you can schedule it online in just a few steps.
+        <br><br>
+        Our goal is to help you take care of your pets without the hassle. Fast, easy, and made for pet lovers like you.</p>
+</section>
+
+  <!-- Team Section -->
+  <section class="team">
+    <h1>Meet Our Team!</h1>
+    <div class="team-container">
+        <div class="team-card">
+            <img src="Assets/roden.png" alt="User Icon" />
+            <h3>Roden</h3>
+            <p>Leader</p>
+        </div>
+        <div class="team-card">
+            <img src="Assets/xader.png" alt="User Icon" />
+            <h3>Xader</h3>
+            <p>Member</p>
+        </div>
+        <div class="team-card">
+            <img src="Assets/zane.png" alt="User Icon" />
+            <h3>Zane</h3>
+            <p>Member</p>
+        </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+            <img src="Assets/logo.png" alt="Quick Reserve Logo" />
+        </div>
+        <div class="socials">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram" /></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <strong>COMPANY</strong>
+          <p>About</p>
+          <p>Careers</p>
+        </div>
+        <div>
+          <strong>HELP</strong>
+          <p>Support</p>
+          <p>FAQs</p>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Quick Reserve. All rights reserved.</p>
+  </footer>
+  <style>
+    /* Paste header styles here */
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <script>
+    // Scroll effect for header
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Load header
+    fetch('/php/QuickReserve/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => console.error("Failed to load header:", error));
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+position: fixed;
+width: 100%;
+top: 0;
+left: 0;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+padding: 15px 30px;
+align-items: center;
+background: rgba(0, 0, 0, 0); /* Instead of "transparent" */
+transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+background: rgba(0, 0, 0, 0.85);
+box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+.logo {
+  font-weight: bold;
+  color: orange;
+  font-size: 1.5em;
+}
+.logo img {
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+.sign-in-btn {
+  background: orange;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+    </style>
+</head>
+<body>
+    
+  <!-- Header -->
+  <!-- header.html -->
+<header>
+  <div class="logo">
+    <a href="/php/QuickReserve/homepage.html">
+      <img src="/php/QuickReserve/logo.png" alt="Quick Reserve Logo" />
+    </a>
+  </div>
+  
+    <div class="nav-links">
+      <a href="/php/QuickReserve/homepage.html">Home</a>
+      <a href="/php/QuickReserve/aboutus.html">About Us</a>
+      <a href="/php/QuickReserve/homepage.html#services">Services</a>
+      <a href="/php/QuickReserve/login.html" class="sign-in-btn">Log In</a>
+    </div>
+  </header>
+  
+  <script>
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+  </script>
+  
+</body>
+</html>

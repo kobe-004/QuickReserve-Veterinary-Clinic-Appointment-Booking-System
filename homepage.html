@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Quick Reserve</title>
+  <style>
+  
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      background-image: url('Assets/homepage.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 0 60px;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    .highlight-yellow,
+    .highlight-blue {
+      color: #FFA500;
+    }
+
+    .hero-text p {
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .book-btn {
+      background: #ef4444;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .services {
+      background-image: url('Assets/services.png');
+      background-size: cover;
+      background-position: center;
+      padding: 50px 0;
+      color: white;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 4em;
+      margin-bottom: 20px;
+      -webkit-text-stroke-width: 2.5px;
+      -webkit-text-stroke-color: black;
+      text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.7), /* Soft drop shadow for depth */
+    0 0 10px rgba(0, 0, 0, 0.5);     /* Glow effect around text */
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .card {
+      background-color: white;
+      border: 3px solid gray;
+      padding: 50px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+}
+
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+    .card img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.2em;
+    }
+
+    footer {
+      background: #000;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: auto;
+      padding-bottom: 20px;
+      text-align: left;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-brand .logo {
+      font-weight: bold;
+      color: orange;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links div {
+      min-width: 150px;
+    }
+
+    .footer-links p {
+      margin: 6px 0;
+    }
+
+    .socials a {
+      margin-right: 10px;
+    }
+
+    .socials img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 0.85em;
+      color: #bbb;
+    }
+
+    @media (max-width: 600px) {
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-links div {
+        min-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div id="header-container"></div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1><span class="highlight-yellow">Fast</span> and <span class="highlight-blue">Easy</span><br>Reservations</h1>
+      <p>
+        Book your spot in seconds! Whether it's a table, event, or equipment, QuickReserve lets you reserve anything, anywhere with just a few clicks. No hassle, no wait—just quick, reliable reservations.
+      </p>
+      <a href="login.html" class="book-btn">Book Appointment</a>
+    </div>
+  </section>
+<!-- Services Section -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <a href="outsidepages/gs_outside.html" class="card">
+        <img src="Assets/grooming.png" alt="Grooming" />
+      </a>
+      <a href="outsidepages/fp_outside.html" class="card">
+        <img src="Assets/fp.png" alt="Full Package" />
+      </a>
+      <a href="outsidepages/cs_outside.html" class="card">
+        <img src="Assets/clinical.png" alt="Clinical" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+            <img src="Assets/logo.png" alt="Quick Reserve Logo" />
+        </div>
+        <div class="socials">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram" /></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <strong>COMPANY</strong>
+          <p>About</p>
+          <p>Careers</p>
+        </div>
+        <div>
+          <strong>HELP</strong>
+          <p>Support</p>
+          <p>FAQs</p>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Quick Reserve. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Scroll effect for header
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Load header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(error => console.error("Failed to load header:", error));
+  </script>
+</body>
+</html>
